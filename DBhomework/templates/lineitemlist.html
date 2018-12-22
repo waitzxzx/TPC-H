@@ -34,52 +34,22 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <li class="active"><a href="#">表单： <span class="sr-only">(current)</span></a></li>
+            <li><a href="{% url 'DBHW:customerlist'  %}">顾客</a></li>
+            <li><a href="{% url 'DBHW:partlist'  %}">零件</a></li>
+            <li><a href="{% url 'DBHW:supplierlist'  %}">供应商</a></li>
+            <li><a href="{% url 'DBHW:partsupplist'  %}">零件供应</a></li>
+            <li><a href="{% url 'DBHW:orderlist'  %}">订单</a></li>
+            <li><a href="{% url 'DBHW:nationlist'  %}">国家</a></li>
+            <li><a href="{% url 'DBHW:regionlist'  %}">地区</a></li>
+            <li><a href="{% url 'DBHW:lineitemlist'  %}">订单明细</a></li>
           </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
+
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">在线商品明细</h1>
@@ -107,6 +77,8 @@
                 </tr>
               </thead>
               <tbody>
+                  <a href="{% url 'DBHW:lineitemadd' %}">
+                  <button class="btn btn-success">增加</button></a>
               {% for item in lineitem_list %}
                 <tr>
                   <td>{{ item.l_orderkey }}</td>
@@ -119,28 +91,37 @@
                   <td>{{ item.l_tax }}</td>
                 <td>{{ item.l_returnflag }}</td>
                 <td>{{ item.l_linestatus }}</td>
-                <td>{{ item.l_shipdate }}</td>
-                <td>{{ item.l_commitdate }}</td>
-                <td>{{ item.l_receiptdate }}</td>
+                <td>{{ item.l_shipdate | date:'Y-n-d' }}</td>
+                <td>{{ item.l_commitdate| date:'Y-n-d' }}</td>
+                <td>{{ item.l_receiptdate| date:'Y-n-d' }}</td>
                 <td>{{ item.l_shipinstruct }}</td>
                 <td>{{ item.l_shipmode }}</td>
                 <td>{{ item.l_comment }}</td>
-                {%comment%}
-                    <td>   联合主键如何设置id
-                  <a href="{% url 'DBHW:lineitemedit' item.r_regionkey  %}" id="{{ item.r_regionkey }}">
+                    <td>
+                  <a href="{% url 'DBHW:lineitemedit' item.l_orderkey item.l_linenumber  %}" id="{{ item.l_linenumber }}">
                   <button class="btn btn-success">编辑</button></a>
-                   <a href="{% url 'DBHW:lineitemdelete' item.r_regionkey  %}" id="{{ item.r_regionkey }}">
+                   <a href="{% url 'DBHW:lineitemdelete' item.l_orderkey item.l_linenumber  %}" id="{{ item.l_linenumber }}">
                   <button class="btn btn-success">删除</button></a>
-                   <a href="{% url 'DBHW:lineitemadd' %}" id="{{ item.r_regionkey }}">
-                  <button class="btn btn-success">增加</button></a>
-                   <a href="{% url 'DBHW:lineitemview' item.r_regionkey%}" id="{{ item.r_regionkey }}">
+                   <a href="{% url 'DBHW:lineitemview' item.l_linenumber%}" id="{{ item.l_linenumber }}">
                   <button class="btn btn-success">浏览</button></a>
                   </td>
-                    {% endcomment %}
                 </tr>
               {% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if lineitem_list.has_previous %}
+            <a href="?page={{ lineitem_list.previous_page_number }}">上一页</a>
+        {% endif %}
 
+        <span class="current">
+             {{ lineitem_list.number }} of {{ lineitem_list.paginator.num_pages }}.
+        </span>
 
+        {% if lineitem_list.has_next %}
+            <a href="?page={{ lineitem_list.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>
               </tbody>
             </table>
           </div>

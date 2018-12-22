@@ -76,19 +76,8 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">顾客</h1>
-            <table  class="table table-hover table-bordered" style="color: #000000">
-                <tr><td>顾客编号</td><td>{{ obj.c_custkey }}</td></tr>
-                <tr><td>顾客名称</td><td>{{ obj.c_name }}</td></tr>
-                <tr><td>顾客地址</td><td>{{ obj.c_address }}</td></tr>
-                <tr><td>国家编号</td><td>{{ obj.c_nationkey }}</td></tr>
-                <tr><td>联系方式</td><td>{{ obj.c_phone }}</td></tr>
-                <tr><td>可用余额</td><td>{{ obj.c_acctbal }}</td></tr>
-                <tr><td>市场</td><td>{{ obj.c_mktsegment }}</td></tr>
-                <tr><td>备注</td><td>{{ obj.c_comment }}</td></tr>
-            </table>
-            <div class="col-sm-5" style="text-align:center">
-                <a href="{% url 'DBHW:customerlist'%}"><button class="btn btn-success">返回</button></a>
-            </div>
+        <td>成功删除</td>
+        <a href="{% url 'DBHW:supplierlist'%}"><button class="btn btn-success">返回</button></a>
         </div>
       </div>
     </div>
@@ -104,4 +93,3 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-
