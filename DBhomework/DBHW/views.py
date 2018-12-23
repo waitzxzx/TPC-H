@@ -34,10 +34,9 @@ def Nation_Edit(request,nid):
         return HttpResponseRedirect("/DBHW/nationlist/")
     else:
         obj = models.Nation.objects.filter(n_nationkey=nid).first()
-        region_list =models.Region.objects.all().values_list('r_regionkey','r_name')
-        #一般返回objects .values_list返回字典 .value返回元组#
-        print(region_list)
-        return render(request, 'nationedit.html', {"obj":obj,"region_list":region_list})
+        region_list = models.Region.objects.all().values_list('r_regionkey', 'r_name')
+        # 一般返回objects .values_list返回字典 .value返回元组#
+        return render(request, 'nationedit.html', {"obj": obj, "region_list": region_list})
 
 
 def Nation_delete(request,nid):
@@ -65,7 +64,7 @@ def Nation_add(request):
         region_list = models.Region.objects.all().values_list('r_regionkey', 'r_name')
         # 一般返回objects .values返回字典 .value_list返回元组#
         print(region_list)
-        return render(request, 'nationadd.html',{"region_list":region_list})
+        return render(request, 'nationadd.html', {"region_list": region_list})
 
 
 def Customer_list(request):
@@ -84,7 +83,7 @@ def Customer_list(request):
 
 
 @csrf_exempt
-def Customer_Edit(request,nid1,nid2):
+def Customer_Edit(request,nid):
     if request.method == "POST":
         custkey = request.POST.get('c_custkey')
         name = request.POST.get('c_name')
@@ -94,12 +93,13 @@ def Customer_Edit(request,nid1,nid2):
         accbal = request.POST.get('c_acctbal')
         mktsegment = request.POST.get('c_mktsegment')
         comment = request.POST.get('c_comment')
-        models.Customer.objects.filter(c_custkey=nid2).update(c_custkey=custkey,c_name = name,c_address =address,c_nationkey =nationkey,
+        models.Customer.objects.filter(c_custkey=nid).update(c_custkey=custkey,c_name = name,c_address =address,c_nationkey =nationkey,
                                                            c_phone=phone,c_acctbal=accbal,c_mktsegment=mktsegment,c_comment=comment)
         return HttpResponseRedirect("/DBHW/customerlist/")
     else:
-        obj = models.Customer.objects.filter(c_custkey=nid2).first()
-        return render(request, 'customeredit.html', {"obj":obj})
+        obj = models.Customer.objects.filter(c_custkey=nid).first()
+        nation_list = models.Nation.objects.all().values_list("n_nationkey", "n_name")
+        return render(request, 'customeredit.html', {"obj": obj, "nation_list": nation_list})
 
 def Customer_delete(request, nid):
     models.Customer.objects.filter(c_custkey=nid).delete()
@@ -129,7 +129,8 @@ def Customer_add(request):
         obj.save()
         return HttpResponseRedirect("/DBHW/customerlist/")
     else:
-        return render(request, 'customeradd.html')
+        nation_list = models.Nation.objects.all().values_list("n_nationkey", "n_name")
+        return render(request, 'customeradd.html', {"nation_list": nation_list})
 
 def Lineitem_list(request):
     lineitem_list = models.Lineitem.objects.all()
@@ -165,7 +166,11 @@ def Lineitem_Edit(request,nid,uid):
         if tax == '':
             tax = 0
         returnflag = request.POST.get('l_returnflag')
+        if returnflag =='':
+            returnflag = 0
         linestatus = request.POST.get('l_linestatus')
+        if linestatus =='':
+            linestatus = 0
         shipdate = request.POST.get('l_shipdate')
         commitdate = request.POST.get('l_commitdate')
         receiptdate = request.POST.get('l_receiptdate')
@@ -173,36 +178,47 @@ def Lineitem_Edit(request,nid,uid):
         shipmode = request.POST.get('l_shipmode')
         comment = request.POST.get('l_comment')
         obj1 = models.Orders.objects.get(o_orderkey=nid)
-        obj2 = models.Lineitem.objects.get(l_linenumber=uid)
-        tem = float(extendedprice) - obj2.l_extendedprice
-        sum = obj1.o_totalprice + tem
-        models.Orders.objects.filter(o_orderkey=nid).update(o_totalprice = sum)
-        models.Lineitem.objects.filter(l_linenumber=uid).update(l_orderkey=orderkey,l_partkey = partkey,l_suppkey =suppkey,
+        obj2 = models.Lineitem.objects.get(l_linenumber=uid,l_orderkey=nid)
+        tem = float(extendedprice) - obj2.l_extendedprice       # 变化量
+        print(tem)
+        sum = obj1.o_totalprice + tem         #母订单总金额
+        print(sum)
+        models.Lineitem.objects.filter(l_linenumber=uid,l_orderkey=nid).update(l_orderkey=orderkey,l_partkey = partkey,l_suppkey =suppkey,
                                                             l_linenumber =linenumber,l_quantity=quantity,l_extendedprice=extendedprice,
                                                             l_discount=discount,l_tax=tax,l_returnflag=returnflag,l_linestatus=linestatus,
                                                             l_shipdate=shipdate,l_commitdate=commitdate,l_receiptdate=receiptdate,l_shipinstruct=shipinstruct,
                                                             l_shipmode=shipmode,l_comment=comment)
+        models.Orders.objects.filter(o_orderkey=nid).update(o_totalprice=sum)
         return HttpResponseRedirect("/DBHW/lineitemlist/")
     else:
-        obj = models.Lineitem.objects.filter(l_orderkey=nid).first()
-        return render(request, 'lineitemedit.html', {"obj":obj})
+        obj = models.Lineitem.objects.filter(l_orderkey=nid,l_linenumber=uid).first()
+        part_list = models.Part.objects.all().values_list("p_partkey", "p_name")
+        supplier_list = models.Supplier.objects.all().values_list("s_suppkey", "s_name")
+        order_list = models.Orders.objects.all().values_list("o_orderkey")
+        return render(request, 'lineitemedit.html',
+                      {"obj": obj, "part_list": part_list, "supplier_list": supplier_list,"order_list":order_list})
 
 def Lineitem_delete(request, nid,uid):
-    models.Lineitem.objects.filter(l_orderkey=nid).delete()
+    obj1 = models.Orders.objects.get(o_orderkey=nid)
+    obj2 = models.Lineitem.objects.get(l_linenumber=uid,l_orderkey=nid)
+    sum = obj1.o_totalprice - obj2.l_extendedprice
+    models.Orders.objects.filter(o_orderkey=nid).update(o_totalprice=sum)
+    models.Lineitem.objects.filter(l_linenumber=uid).delete()
     return render(request, 'lineitemdelete.html')
 
 
 @csrf_exempt
-def Lineitem_view(request, nid):
-    obj = models.Lineitem.objects.filter(l_orderkey=nid).first()
+def Lineitem_view(request, nid,uid):
+    obj = models.Lineitem.objects.filter(l_linenumber=uid,l_orderkey=nid).first()
     return render(request, 'lineitemview.html', {"obj": obj})
 
 @csrf_exempt
 def Lineitem_Add(request):
     if request.method == "POST":
         orderkey = request.POST.get('l_orderkey')
-        partkey = request.POST.get('l_partkey')
-        suppkey = request.POST.get('l_suppkey')
+        tem_partkey = request.POST.get('l_partkey')
+        tem_suppkey = request.POST.get('l_suppkey')
+        partsupp = models.Partsupp.objects.get(ps_suppkey=tem_suppkey,ps_partkey=tem_partkey)
         linenumber = request.POST.get('l_linenumber')
         quantity = request.POST.get('l_quantity')
         if quantity == '':
@@ -217,25 +233,32 @@ def Lineitem_Add(request):
         if tax == '':
             tax = 0
         returnflag = request.POST.get('l_returnflag')
+        if returnflag =='None':
+            returnflag = 0
         linestatus = request.POST.get('l_linestatus')
+        if linestatus =='None':
+            linestatus = 0
         shipdate = request.POST.get('l_shipdate')
         commitdate = request.POST.get('l_commitdate')
         receiptdate = request.POST.get('l_receiptdate')
         shipinstruct = request.POST.get('l_shipinstruct')
         shipmode = request.POST.get('l_shipmode')
         comment = request.POST.get('l_comment')
-        obj1 = models.Orders.objects.filter(l_orderkey=orderkey).first()
-        sum = obj1.o_totalprice + extendedprice
-        models.Orders.objects.filter(o_orderkey=orderkey).update(o_totalprice=sum)
-        obj = models.Lineitem(l_orderkey=orderkey,l_partkey = partkey,l_suppkey =suppkey,
-                                                            l_linenumber =linenumber,l_quantity=quantity,l_extendedprice=extendedprice,
+        obj1 = models.Orders.objects.get(o_orderkey=orderkey)
+        sum = obj1.o_totalprice + float(extendedprice)
+        obj = models.Lineitem(l_orderkey=orderkey, l_linenumber=linenumber, l_partkey = partsupp,l_suppkey=partsupp,
+                                                            l_quantity=quantity,l_extendedprice=extendedprice,
                                                             l_discount=discount,l_tax=tax,l_returnflag=returnflag,l_linestatus=linestatus,
                                                             l_shipdate=shipdate,l_commitdate=commitdate,l_receiptdate=receiptdate,l_shipinstruct=shipinstruct,
                                                             l_shipmode=shipmode,l_comment=comment)
+        models.Orders.objects.filter(o_orderkey=orderkey).update(o_totalprice=sum)
         obj.save()
         return HttpResponseRedirect("/DBHW/lineitemlist/")
     else:
-        return render(request, 'lineitemadd.html')
+        order_list = models.Orders.objects.all().values_list("o_orderkey")
+        part_list = models.Part.objects.all().values_list("p_partkey", "p_name")
+        supplier_list = models.Supplier.objects.all().values_list("s_suppkey", "s_name")
+        return render(request, 'lineitemadd.html', {"part_list": part_list, "supplier_list": supplier_list,"order_list":order_list})
 
 
 def Order_list(request):
@@ -251,28 +274,39 @@ def Order_list(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         order = paginator.page(paginator.num_pages)
     return render(request, 'orderlist.html', {"order_list":order})
-'''
+
 @csrf_exempt
-def Order_Edit(request,nid):
+def Order_Add(request):
     if request.method == "POST":
         orderkey = request.POST.get('o_orderkey')
-        custkey = request.POST.get('o_custkey')
+        tem_custkey = request.POST.get('o_custkey')
+        custkey = models.Customer.objects.get(c_custkey=tem_custkey)
         orderstatus = request.POST.get('o_orderstatus')
-        totalprice = request.POST.get('o_totalprice')
         orderdate = request.POST.get('o_orderdate')
         orderpriority = request.POST.get('o_orderpriority')
         clerk = request.POST.get('o_clerk')
         shippriority = request.POST.get('o_shippriority')
         comment = request.POST.get('o_comment')
-        models.Orders.objects.filter(o_orderkey=nid).update(o_orderkey=orderkey,o_custkey = custkey,o_orderstatus =orderstatus,
-                                                            o_totalprice =totalprice,o_orderdate=orderdate,o_orderpriority=orderpriority,
+        obj = models.Orders(o_orderkey=orderkey,o_custkey = custkey,o_orderstatus =orderstatus,
+                                                            o_totalprice =0,o_orderdate=orderdate,o_orderpriority=orderpriority,
                                                             o_clerk=clerk,o_shippriority=shippriority,o_comment=comment)
+        obj.save()
         return HttpResponseRedirect("/DBHW/orderlist/")
     else:
-        obj = models.Orders.objects.filter(o_orderkey=nid).first()
-        return render(request, 'orderlist.html', {"obj":obj})
+        customer_list = models.Customer.objects.all().values_list('c_custkey','c_name')
+        return render(request, 'orderadd.html',{'customer_list':customer_list})
 
-'''
+def Order_delete(request, nid):
+    models.Orders.objects.filter(o_orderkey=nid).delete()
+    models.Lineitem.objects.filter(l_orderkey=nid).delete()
+    return render(request, 'orderdelete.html')
+
+@csrf_exempt
+def Order_view(request, nid):
+    obj = models.Orders.objects.filter(o_orderkey=nid).first()
+    return render(request, 'orderview.html', {"obj": obj})
+
+
 def Part_list(request):
     part_list = models.Part.objects.all()
     paginator = Paginator(part_list, 10)
@@ -363,7 +397,7 @@ def Partsupp_list(request):
     return render(request, 'partsupplist.html', {"partsupp_list":partsupp})
 
 @csrf_exempt
-def Partsupp_Edit(request,nid):
+def Partsupp_Edit(request,nid,uid):
     if request.method == "POST":
         partkey = request.POST.get('ps_partkey')
         suppkey = request.POST.get('ps_suppkey')
@@ -375,18 +409,24 @@ def Partsupp_Edit(request,nid):
                                                          ps_supplycost =supplycost,ps_comment=comment)
         return HttpResponseRedirect("/DBHW/partsupplist/")
     else:
-        obj = models.Partsupp.objects.filter(ps_partkey=nid).first()
-        return render(request, 'partsupplist.html', {"obj":obj})
+        obj = models.Partsupp.objects.filter(ps_partkey=nid,ps_suppkey=uid).first()
+        part_list = models.Part.objects.all().values_list("p_partkey", "p_name")
+        supplier_list = models.Supplier.objects.all().values_list("s_suppkey", "s_name")
+        return render(request, 'partsuppedit.html',
+                      {"obj": obj, "part_list": part_list, "supplier_list": supplier_list})
 
-def Partsupp_delete(request, nid):
-    models.Partsupp.objects.filter(ps_partkey=nid).delete()
+
+def Partsupp_delete(request, nid,uid):
+    models.Partsupp.objects.filter(ps_partkey=nid,ps_suppkey=uid).delete()
     return render(request, 'partsuppdelete.html')
 
 @csrf_exempt
 def Partsupp_Add(request):
     if request.method == "POST":
-        partkey = request.POST.get('ps_partkey')
-        suppkey = request.POST.get('ps_suppkey')
+        tem_partkey = request.POST.get('ps_partkey')
+        partkey = models.Part.objects.get(p_partkey=tem_partkey)
+        tem_suppkey = request.POST.get('ps_suppkey')
+        suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
         availqty = request.POST.get('ps_availqty')
         supplycost = request.POST.get('ps_supplycost')
         comment = request.POST.get('ps_comment')
@@ -396,12 +436,14 @@ def Partsupp_Add(request):
         obj.save()
         return HttpResponseRedirect("/DBHW/partsupplist/")
     else:
-        return render(request, 'partsuppadd.html')
+        part_list = models.Part.objects.all().values_list("p_partkey", "p_name")
+        supplier_list = models.Supplier.objects.all().values_list("s_suppkey", "s_name")
+        return render(request, 'partsuppadd.html', {"part_list": part_list, "supplier_list": supplier_list})
 
 
 @csrf_exempt
-def Partsupp_view(request, nid):
-    obj = models.Partsupp.objects.filter(ps_partkey=nid).first()
+def Partsupp_view(request, nid,uid):
+    obj = models.Partsupp.objects.filter(ps_partkey=nid,ps_suppkey=uid).first()
     return render(request, 'partsuppview.html', {"obj": obj})
 
 def Region_list(request):
@@ -490,17 +532,18 @@ def Supplier_Edit(request,nid):
         return HttpResponseRedirect("/DBHW/supplierlist/")
     else:
         obj = models.Supplier.objects.filter(s_suppkey=nid).first()
-        return render(request, 'supplieredit.html', {"obj":obj})
+        nation_list = models.Nation.objects.all().values_list("n_nationkey", "n_name")
+        return render(request, 'supplieredit.html', {"obj": obj, "nation_list": nation_list})
 
 def Supplier_delete(request, nid):
     models.Supplier.objects.filter(s_suppkey=nid).delete()
-    return render(request, 'supplierlist.html')
+    return render(request, 'supplierdelete.html')
 
 
 @csrf_exempt
 def Supplier_view(request, nid):
     obj = models.Supplier.objects.filter(s_suppkey=nid).first()
-    return render(request, 'supplierlist.html', {"obj": obj})
+    return render(request, 'supplierview.html', {"obj": obj})
 
 @csrf_exempt
 def Supplier_Add(request):
@@ -508,13 +551,16 @@ def Supplier_Add(request):
         suppkey = request.POST.get('s_suppkey')
         name = request.POST.get('s_name')
         address = request.POST.get('s_address')
-        nationkey = request.POST.get('s_nationkey')
+        tem_nationkey = request.POST.get('s_nationkey')
+        nation = models.Nation.objects.get(n_nationkey=tem_nationkey)
         phone = request.POST.get('s_phone')
         acctbal = request.POST.get('s_acctbal')
         comment = request.POST.get('s_comment')
-        models.Supplier(s_suppkey=suppkey,s_name = name,s_address=address,
-                                                           s_nationkey=nationkey,s_phone=phone,s_acctbal=acctbal,
+        obj=models.Supplier(s_suppkey=suppkey,s_name = name,s_address=address,
+                                                           s_nationkey=nation,s_phone=phone,s_acctbal=acctbal,
                                                            s_comment=comment)
+        obj.save()
         return HttpResponseRedirect("/DBHW/supplierlist/")
     else:
-        return render(request, 'supplieradd.html')
+        nation_list = models.Nation.objects.all().values_list("n_nationkey", "n_name")
+        return render(request, 'supplieradd.html', {"nation_list": nation_list})

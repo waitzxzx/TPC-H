@@ -34,7 +34,34 @@
 
   <body>
 
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">TPC-H</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../customerlist">顾客</a></li>
+            <li><a href="../partlist">零件</a></li>
+            <li><a href="../orderlist">订单</a></li>
+            <li><a href="../supplierlist">供应商</a></li>
+            <li><a href="../lineitemlist">订单明细</a></li>
+            <li><a href="../partsupplist">零件供应</a></li>
+             <li><a href="../nationlist">国家</a></li>
+            <li><a href="../regionlist">地区</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
 
     <div class="container-fluid">
       <div class="row">
@@ -85,26 +112,33 @@
                   </td>
                 </tr>
               {% endfor %}
-<div class="pagination">
-    <span class="step-links">
-        {% if region_list.has_previous %}
-            <a href="?page={{ region_list.previous_page_number }}">上一页</a>
-        {% endif %}
-
-        <span class="current">
-             {{ region_list.number }} of {{ region_list.paginator.num_pages }}.
-        </span>
-
-        {% if region_list.has_next %}
-            <a href="?page={{ region_list.next_page_number }}">下一页</a>
-        {% endif %}
-    </span>
-</div>
 
               </tbody>
             </table>
           </div>
         </div>
+      <ul class="pager">
+        <li>
+        {%if region_list.has_previous %}
+            <a href="?page={{ region_list.previous_page_number }}">上一页</a>
+        {% else %}
+            <a> 第一页 </a>
+        {% endif %}
+        </li>
+
+        <span class="text-primary">
+             第{{ region_list.number }}页   共{{ region_list.paginator.num_pages }}页
+        </span>
+
+        <li>
+        {% if region_list.has_next %}
+            <a href="?page={{ region_list.next_page_number }}">下一页</a>
+        {% else %}
+            <a> 最后一页 </a>
+        {% endif %}
+
+        </li>
+      </ul>
       </div>
     </div>
 

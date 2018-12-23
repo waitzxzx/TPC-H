@@ -47,10 +47,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">增加</a></li>
-            <li><a href="#">删除</a></li>
-            <li><a href="#">编辑</a></li>
-            <li><a href="#">查看</a></li>
+            <li><a href="../customerlist">顾客</a></li>
+            <li><a href="../partlist">零件</a></li>
+            <li><a href="../orderlist">订单</a></li>
+            <li><a href="../supplierlist">供应商</a></li>
+            <li><a href="../lineitemlist">订单明细</a></li>
+            <li><a href="../partsupplist">零件供应</a></li>
+             <li><a href="../nationlist">国家</a></li>
+            <li><a href="../regionlist">地区</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -79,8 +83,8 @@
           <h1 class="page-header">订单明细</h1>
             <table  class="table table-hover table-bordered" style="color: #000000">
                 <tr><td>订单号</td><td>{{ obj.l_orderkey }}</td></tr>
-                <tr><td>零件编号</td><td>{{ obj.l_partkey }}</td></tr>
-                <tr><td>供应商编号</td><td>{{ obj.l_suppkey }}</td></tr>
+                <tr><td>零件编号</td><td>{{ obj.l_partkey.ps_partkey.p_name }}</td></tr>
+                <tr><td>供应商编号</td><td>{{ obj.l_suppkey.ps_suppkey.s_name }}</td></tr>
                 <tr><td>明细编号</td><td>{{ obj.l_linenumber }}</td></tr>
                 <tr><td>数量</td><td>{{ obj.l_quantity }}</td></tr>
                 <tr><td>总金额</td><td>{{ obj.l_extendedprice }}</td></tr>

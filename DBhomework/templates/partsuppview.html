@@ -47,10 +47,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">增加</a></li>
-            <li><a href="#">删除</a></li>
-            <li><a href="#">编辑</a></li>
-            <li><a href="#">查看</a></li>
+            <li><a href="../customerlist">顾客</a></li>
+            <li><a href="../partlist">零件</a></li>
+            <li><a href="../orderlist">订单</a></li>
+            <li><a href="../supplierlist">供应商</a></li>
+            <li><a href="../lineitemlist">订单明细</a></li>
+            <li><a href="../partsupplist">零件供应</a></li>
+             <li><a href="../nationlist">国家</a></li>
+            <li><a href="../regionlist">地区</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -77,8 +81,8 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">零件供应</h1>
             <table  class="table table-hover table-bordered" style="color: #000000">
-                <tr><td>零件编号</td><td>{{ obj.ps_partkey }}</td></tr>
-                <tr><td>供应商名称</td><td>{{ obj.ps_suppkey }}</td></tr>
+                <tr><td>零件编号</td><td>{{ obj.ps_partkey.p_name }}</td></tr>
+                <tr><td>供应商名称</td><td>{{ obj.ps_suppkey.s_name }}</td></tr>
                 <tr><td>供应数量</td><td>{{ obj.ps_availqty }}</td></tr>
                 <tr><td>供应价格</td><td>{{ obj.ps_supplycost }}</td></tr>
                 <tr><td>备注</td><td>{{ obj.ps_comment }}</td></tr>

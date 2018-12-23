@@ -79,52 +79,21 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">零件供应</h1>
-            <form class="form-horizontal" action="/DBHW/partsuppedit-{{ obj.ps_partkey.p_partkey }}-{{ obj.ps_suppkey.s_suppkey }}/" method="post">{% csrf_token %}
-                       <div class="form-group">
-                           <label class="col-sm-2 control-label">零件编号</label>
-                           <div class="col-sm-10">
-                                 <select class="form-control" name="ps_partkey">
-                                    {% for item in part_list %}
-                                        <option value = "{{ item.0 }}">{{ item.1 }}</option>
-                                        {% endfor %}
-                                </select>
-                           </div>
-                       </div>
-                     <div class="form-group">
-                           <label class="col-sm-2 control-label">供应商编号</label>
-                           <div class="col-sm-10">
-                                <select class="form-control" name="ps_suppkey">
-                                    {% for item in supplier_list %}
-                                        <option value = "{{ item.0 }}">{{ item.1 }}</option>
-                                        {% endfor %}
-                                </select>
-                           </div>
-                       </div>
-
-                     <div class="form-group">
-                           <label class="col-sm-2 control-label">供应数量</label>
-                           <div class="col-sm-10">
-                                <input class="form-control" type="text" name="ps_availqty" value="{{ obj.ps_availqty }}"/>
-                           </div>
-                       </div>
-
-                     <div class="form-group">
-                           <label class="col-sm-2 control-label">供应价格</label>
-                           <div class="col-sm-10">
-                                <input class="form-control" type="text" name="ps_supplycost" value="{{ obj.ps_supplycost }}"/>
-                           </div>
-                       </div>
-                        <div class="form-group">
-                           <label class="col-sm-2 control-label">备注</label>
-                           <div class="col-sm-10">
-                                <input class="form-control" type="text" name="ps_comment" value="{{ obj.ps_comment }}"/>
-                           </div>
-                       </div>
-                <div class="col-sm-5" style="text-align:center">
-                     <button type="submit" class="btn btn-success">编辑</button>
-                </div>
-        </form>
+          <h1 class="page-header">订单</h1>
+            <table  class="table table-hover table-bordered" style="color: #000000">
+                <tr><td>订单编号</td><td>{{ obj.o_orderkey }}</td></tr>
+                <tr><td>顾客编号</td><td>{{ obj.o_custkey }}</td></tr>
+                <tr><td>订单状态</td><td>{{ obj.o_orderstatus }}</td></tr>
+                <tr><td>订单金额</td><td>{{ obj.o_totalprice }}</td></tr>
+                <tr><td>订单日期</td><td>{{ obj.o_orderdate }}</td></tr>
+                <tr><td>优先级</td><td>{{ obj.o_orderpriority }}</td></tr>
+                <tr><td>制单员</td><td>{{ obj.o_clerk }}</td></tr>
+                <tr><td>运输优先级</td><td>{{ obj.o_shippriority }}</td></tr>
+                <tr><td>备注</td><td>{{ obj.o_comment }}</td></tr>
+            </table>
+            <div class="col-sm-5" style="text-align:center">
+                <a href="{% url 'DBHW:orderlist'%}"><button class="btn btn-success">返回</button></a>
+            </div>
         </div>
       </div>
     </div>
