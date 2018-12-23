@@ -19,8 +19,8 @@ class Customer(models.Model):
 
 class Lineitem(models.Model):
     l_orderkey = models.IntegerField(db_column='L_ORDERKEY')  # Field name made lowercase.
-    l_partkey = models.ForeignKey('Partsupp', models.DO_NOTHING,related_name='l_partkey_Lineitem' ,db_column='L_PARTKEY', blank=True, null=True)  # Field name made lowercase.
-    l_suppkey = models.ForeignKey('Partsupp', models.DO_NOTHING,related_name='l_suppkey_Lineitem', db_column='L_SUPPKEY', blank=True, null=True)  # Field name made lowercase.
+    l_partkey = models.ForeignKey('Part', models.DO_NOTHING,related_name='l_partkey_Lineitem', blank=True, null=True)  # Field name made lowercase.
+    l_suppkey = models.ForeignKey('Supplier', models.DO_NOTHING,related_name='l_suppkey_Lineitem', blank=True, null=True)  # Field name made lowercase.
     l_linenumber = models.IntegerField(db_column='L_LINENUMBER')  # Field name made lowercase.
     l_quantity = models.FloatField(db_column='L_QUANTITY', blank=True, null=True)  # Field name made lowercase.
     l_extendedprice = models.FloatField(db_column='L_EXTENDEDPRICE', blank=True, null=True)  # Field name made lowercase.
@@ -90,7 +90,6 @@ class Partsupp(models.Model):
     ps_availqty = models.IntegerField(db_column='PS_AVAILQTY', blank=True, null=True)  # Field name made lowercase.
     ps_supplycost = models.FloatField(db_column='PS_SUPPLYCOST', blank=True, null=True)  # Field name made lowercase.
     ps_comment = models.CharField(db_column='PS_COMMENT', max_length=199, blank=True, null=True)  # Field name made lowercase.
-
     class Meta:
         managed = False
         db_table = 'partsupp'
