@@ -120,8 +120,8 @@ def Customer_Edit(request,nid):
                 return render(request, "error.html", {"msg": "请输入正确的联系方式"})
 
             accbal = request.POST.get('c_acctbal')
-            if accbal is None:
-                accbal = 0
+            if accbal == "":
+                accbal = "0"
 
             accbal_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
             p=re.compile(accbal_regex)
@@ -172,7 +172,7 @@ def Customer_add(request):
 
             accbal = request.POST.get('c_acctbal')
             if accbal =='':
-                accbal = 0
+                accbal = "0"
 
             accbal_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
             p = re.compile(accbal_regex)
@@ -218,26 +218,34 @@ def Lineitem_Edit(request,nid,uid):
             partsupp = models.Partsupp.objects.filter(ps_partkey=tem_partkey, ps_suppkey=tem_suppkey)
             print(partsupp)
             if partsupp.count()==0:
-                return HttpResponseRedirect("/DBHW/lineitemlist/")
+                return render(request,"error.html",{"msg":"零件供应表中没有该组合"})
             linenumber = request.POST.get('l_linenumber')
             quantity = request.POST.get('l_quantity')
-            if quantity is None:
-                quantity = 0
+            if quantity =="":
+                quantity = "0"
             extendedprice = request.POST.get('l_extendedprice')
-            if extendedprice is None:
-                extendedprice = 0
+            if extendedprice =="":
+                extendedprice = "0"
             discount = request.POST.get('l_discount')
-            if discount is None:
-                discount = 0
+            if discount =="":
+                discount = "0"
             tax = request.POST.get('l_tax')
-            if tax is None:
-                tax = 0
+            if tax =="":
+                tax ="0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(tax):
+                return render(request, "error.html", {"msg": "请输入正确的税"})
+            if not p.match(discount):
+                return render(request, "error.html", {"msg": "请输入正确的折扣"})
+            if not p.match(extendedprice):
+                return render(request, "error.html", {"msg": "请输入正确的金额"})
+            if not p.match(quantity):
+                return render(request, "error.html", {"msg": "请输入正确的数量"})
+
             returnflag = request.POST.get('l_returnflag')
-            if returnflag is None:
-                returnflag = 0
             linestatus = request.POST.get('l_linestatus')
-            if linestatus is None:
-                linestatus = 0
             shipdate = request.POST.get('l_shipdate')
             commitdate = request.POST.get('l_commitdate')
             receiptdate = request.POST.get('l_receiptdate')
@@ -289,28 +297,36 @@ def Lineitem_Add(request):
             tem_suppkey = request.POST.get('l_suppkey')
             partsupp = models.Partsupp.objects.filter(ps_partkey=tem_partkey,ps_suppkey=tem_suppkey)
             if partsupp.count()==0:
-                return HttpResponseRedirect("/DBHW/lineitemlist/")
+                return render(request, "error.html", {"msg": "零件供应表中没有该组合"})
             partkey = models.Part.objects.get(p_partkey=tem_partkey)
             suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
             linenumber = request.POST.get('l_linenumber')
             quantity = request.POST.get('l_quantity')
             if quantity == '':
-                quantity = 0
+                quantity = "0"
             extendedprice = request.POST.get('l_extendedprice')
             if extendedprice == '':
-                extendedprice = 0
+                extendedprice = "0"
             discount = request.POST.get('l_discount')
             if discount == '':
-                discount = 0
+                discount = "0"
             tax = request.POST.get('l_tax')
             if tax == '':
-                tax = 0
+                tax = "0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(tax):
+                return render(request, "error.html", {"msg": "请输入正确的税"})
+            if not p.match(discount):
+                return render(request, "error.html", {"msg": "请输入正确的折扣"})
+            if not p.match(extendedprice):
+                return render(request, "error.html", {"msg": "请输入正确的金额"})
+            if not p.match(quantity):
+                return render(request, "error.html", {"msg": "请输入正确的数量"})
+
             returnflag = request.POST.get('l_returnflag')
-            if returnflag =='None':
-                returnflag = 0
             linestatus = request.POST.get('l_linestatus')
-            if linestatus =='None':
-                linestatus = 0
             shipdate = request.POST.get('l_shipdate')
             commitdate = request.POST.get('l_commitdate')
             receiptdate = request.POST.get('l_receiptdate')
@@ -324,8 +340,9 @@ def Lineitem_Add(request):
                                                                 l_discount=discount,l_tax=tax,l_returnflag=returnflag,l_linestatus=linestatus,
                                                                 l_shipdate=shipdate,l_commitdate=commitdate,l_receiptdate=receiptdate,l_shipinstruct=shipinstruct,
                                                                 l_shipmode=shipmode,l_comment=comment)
-            models.Orders.objects.filter(o_orderkey=orderkey).update(o_totalprice=sum)
             obj.save()
+            models.Orders.objects.filter(o_orderkey=orderkey).update(o_totalprice=sum)
+
             return HttpResponseRedirect("/DBHW/lineitemlist/")
         else:
             order_list = models.Orders.objects.all().values_list("o_orderkey")
@@ -362,11 +379,12 @@ def Order_Add(request):
             clerk = request.POST.get('o_clerk')
             shippriority = request.POST.get('o_shippriority')
             if shippriority =='':
-                shippriority = 0
+                shippriority = "0"
             comment = request.POST.get('o_comment')
             obj = models.Orders(o_orderkey=orderkey,o_custkey = custkey,o_orderstatus =orderstatus,
                                                                 o_totalprice =0,o_orderdate=orderdate,o_orderpriority=orderpriority,
                                                                 o_clerk=clerk,o_shippriority=shippriority,o_comment=comment)
+            #不允许用户直接写订单总金额
             obj.save()
             return HttpResponseRedirect("/DBHW/orderlist/")
         else:
@@ -414,11 +432,17 @@ def Part_Edit(request,nid):
             type = request.POST.get('p_type')
             size = request.POST.get('p_size')
             if size == '':
-                size = 0
+                size = "0"
             container = request.POST.get('p_container')
             retailprice = request.POST.get('p_retailprice')
             if retailprice == '':
-                retailprice = 0
+                retailprice = "0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(retailprice):
+                return render(request, "error.html", {"msg": "请输入正确的零售价"})
+
             comment = request.POST.get('p_comment')
             models.Part.objects.filter(p_partkey=nid).update(p_partkey=partkey,p_name = name,p_emfgr=emfgr,
                                                                 p_brand =brand,p_type=type,p_size=size,
@@ -459,7 +483,13 @@ def Part_Add(request):
             container = request.POST.get('p_container')
             retailprice = request.POST.get('p_retailprice')
             if retailprice == '':
-                retailprice=0
+                retailprice="0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(retailprice):
+                return render(request, "error.html", {"msg": "请输入正确的零售价"})
+
             comment = request.POST.get('p_comment')
             obj = models.Part(p_partkey=partkey,p_name = name,p_emfgr=emfgr,
                              p_brand =brand,p_type=type,p_size=size,
@@ -491,9 +521,19 @@ def Partsupp_Edit(request,nid,uid):
             partkey = request.POST.get('ps_partkey')
             suppkey = request.POST.get('ps_suppkey')
             availqty = request.POST.get('ps_availqty')
-            if availqty is None:
-                availqty = 0
+            if availqty =="":
+                availqty = "0"
+            ava_regex = r'^\d+$'
+            p = re.compile(ava_regex)
+            if not p.match(availqty):
+                return render(request, "error.html", {"msg": "请输入正确的数量"})
+
             supplycost = request.POST.get('ps_supplycost')
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(supplycost):
+                return render(request, "error.html", {"msg": "请输入正确的供应价格"})
+
             comment = request.POST.get('ps_comment')
 
             models.Partsupp.objects.filter(ps_partkey=nid).update(ps_partkey=partkey, ps_suppkey =suppkey,ps_availqty=availqty,
@@ -526,8 +566,18 @@ def Partsupp_Add(request):
             suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
             availqty = request.POST.get('ps_availqty')
             if availqty =='':
-                availqty = 0
+                availqty = "0"
+            ava_regex = r'^\d+$'
+            p = re.compile(ava_regex)
+            if not p.match(availqty):
+                return render(request, "error.html", {"msg": "请输入正确的数量"})
+
             supplycost = request.POST.get('ps_supplycost')
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(supplycost):
+                return render(request, "error.html", {"msg": "请输入正确的供应价格"})
+
             comment = request.POST.get('ps_comment')
 
             obj = models.Partsupp(ps_partkey=partkey, ps_suppkey =suppkey,ps_availqty=availqty,
@@ -553,10 +603,8 @@ def Region_list(request):
     try:
         region = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         region = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         region = paginator.page(paginator.num_pages)
     return render(request, 'regionlist.html', {"region_list":region})
 
@@ -569,8 +617,14 @@ def Region_Edit(request,nid):
             name = request.POST.get('r_name')
             comment1 = request.POST.get('r_comment')
             supplycost = request.POST.get('ps_supplycost')
-            if supplycost is None:
-                supplycost = 0
+            if supplycost == "":
+                supplycost = "0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(supplycost):
+                return render(request, "error.html", {"msg": "请输入正确的供应价格"})
+
             comment2 = request.POST.get('ps_comment')
             models.Region.objects.filter(r_regionkey=nid).update(r_regionkey=regionkey,r_name = name,r_comment=comment1,
                                                              ps_supplycost =supplycost,ps_comment=comment2)
@@ -603,7 +657,13 @@ def Region_Add(request):
             comment1 = request.POST.get('r_comment')
             supplycost = request.POST.get('ps_supplycost')
             if supplycost =='':
-                supplycost = 0
+                supplycost = "0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(supplycost):
+                return render(request, "error.html", {"msg": "请输入正确的供应价格"})
+
             comment2 = request.POST.get('ps_comment')
             obj = models.Region(r_regionkey=regionkey,r_name = name,r_comment=comment1,
                                                              ps_supplycost =supplycost,ps_comment=comment2)
@@ -646,8 +706,14 @@ def Supplier_Edit(request,nid):
                 return render(request, 'error.html', {'msg': '请输入正确手机号'})
 
             acctbal = request.POST.get('s_acctbal')
-            if acctbal == '':
-                acctbal = 0
+            if acctbal == "":
+                acctbal = "0"
+
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(acctbal):
+                return render(request, "error.html", {"msg": "请输入正确的可用余额"})
+
             comment = request.POST.get('s_comment')
             obj = models.Supplier(s_suppkey=suppkey, s_name=name, s_address=address,
                                   s_nationkey=nation, s_phone=phone, s_acctbal=acctbal,
@@ -686,7 +752,6 @@ def Supplier_Add(request):
             tem_nationkey = request.POST.get('s_nationkey')
             nation = models.Nation.objects.get(n_nationkey=tem_nationkey)
             phone = request.POST.get('s_phone')
-
             mobile_regex = r'^1[34578]\d{9}$' #手机号正则表达
             p = re.compile(mobile_regex)
             if not p.match(phone) :
@@ -694,7 +759,12 @@ def Supplier_Add(request):
 
             acctbal = request.POST.get('s_acctbal')
             if acctbal =='':
-                acctbal = 0
+                acctbal = "0"
+            number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
+            p = re.compile(number_regex)
+            if not p.match(acctbal):
+                return render(request, "error.html", {"msg": "请输入正确的可用余额"})
+
             comment = request.POST.get('s_comment')
             obj=models.Supplier(s_suppkey=suppkey,s_name = name,s_address=address,
             s_nationkey=nation,s_phone=phone,s_acctbal=acctbal,
