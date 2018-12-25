@@ -2,6 +2,11 @@ from django.urls import path,re_path,include
 from DBHW.views import *
 app_name = 'DBHW'
 urlpatterns = [
+    re_path(r'^customersearch/', Customer_search, name='customersearch'),
+    re_path(r'^regionsearch/', Region_search, name='regionsearch'),
+    re_path(r'^partsearch/', Part_search, name='partsearch'),
+    re_path(r'^nationsearch/', Nation_search, name='nationsearch'),
+    re_path(r'^suppliersearch/', Supplier_search, name='suppliersearch'),
     re_path(r'^nationlist/',Nation_list,name='nationlist'),
     re_path(r'^nationedit-(?P<nid>\d+)/',Nation_Edit,name='nationedit'),
     re_path(r'^nationadd/',Nation_add,name='nationadd'),

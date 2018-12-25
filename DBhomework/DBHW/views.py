@@ -8,6 +8,57 @@ import re
 
 
 
+def Customer_search(request):
+    name = request.GET.get('name', '')
+    if not name:
+        error_msg = '请输入搜索关键字'
+        return render(request, 'error.html', {'msg': error_msg})
+    if name:
+        obj = models.Customer.objects.filter(c_name__contains=name)
+    return render(request, 'customerlist.html', { 'customer_list': obj,})
+
+
+def Nation_search(request):
+    name = request.GET.get('name', '')
+    if not name:
+        error_msg = '请输入搜索关键字'
+        return render(request, 'error.html', {'msg': error_msg})
+    if name:
+        obj = models.Nation.objects.filter(n_name__contains=name)
+    return render(request, 'Nationlist.html', {'nation_list': obj, })
+
+
+def Region_search(request):
+    name = request.GET.get('name', '')
+    if not name:
+        error_msg = '请输入搜索关键字'
+        return render(request, 'error.html', {'msg': error_msg})
+    if name:
+        obj = models.Region.objects.filter(r_name__contains=name)
+    return render(request, 'regionlist.html', {'region_list': obj, })
+
+
+def Part_search(request):
+    name = request.GET.get('name', '')
+    if not name:
+        error_msg = '请输入搜索关键字'
+        return render(request, 'error.html', {'msg': error_msg})
+    if name:
+        obj = models.Part.objects.filter(p_name__contains=name)
+    return render(request, 'partlist.html', {'part_list': obj,})
+
+
+def Supplier_search(request):
+    name = request.GET.get('name', '')
+    if not name:
+        error_msg = '请输入搜索关键字'
+        return render(request, 'error.html', {'msg': error_msg})
+    if name:
+        obj = models.Supplier.objects.filter(s_name__contains=name)
+    return render(request, 'supplierlist.html', {
+        'supplier_list': obj,
+    })
+
 
 def Nation_list(request):
     nation_list = models.Nation.objects.all()

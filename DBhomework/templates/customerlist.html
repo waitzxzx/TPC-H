@@ -52,7 +52,12 @@
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           <form class="navbar-form navbar-right" method="get" action="{% url 'DBHW:customersearch' %}">
+                <span>搜索</span>
+               <input type="text" class="form-control"  name="name" placeholder="在这里搜索...">
+          </form>
           <h1 class="page-header text-center">顾客</h1>
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -68,13 +73,15 @@
                 </tr>
               </thead>
               <tbody>
-              <div style="text-align:center">
+              <div style="text-align:right">
                   <a href="{% url 'DBHW:customeradd' %}" >
                   <button class="btn btn-primary">增加</button></a>
               </div>
 
               {% for item in customer_list %}
                 <tr>
+
+
                   <td>{{ item.c_custkey }}</td>
                   <td>{{ item.c_name }}</td>
                   <td>{{ item.c_address }}</td>
@@ -83,17 +90,16 @@
                   <td>{{ item.c_acctbal }}</td>
                   <td>{{ item.c_mktsegment }}</td>
                   <td>{{ item.c_comment }}</td>
-
                 <td>
 
                   <a href="{% url 'DBHW:customeredit' item.c_custkey  %}" id="{{ item.c_custkey }}">
                   <button class="btn btn-primary">编辑</button></a>
                    <a href="{% url 'DBHW:customerdelete' item.c_custkey  %}" id="{{ item.c_custkey }}">
                   <button class="btn btn-primary">删除</button></a>
-
                    <a href="{% url 'DBHW:customerview' item.c_custkey%}" id="{{ item.c_custkey }}">
                   <button class="btn btn-primary">浏览</button></a>
                   </td>
+
                 </tr>
               {% endfor %}
               </tbody>

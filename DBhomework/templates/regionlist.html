@@ -53,6 +53,10 @@
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                   <form class="navbar-form navbar-right" method="get" action="{% url 'DBHW:regionsearch' %}">
+             <span>搜索</span>
+                       <input type="text" class="form-control"  name="name" placeholder="在这里搜索...">
+          </form>
           <h1 class="page-header text-center">地区</h1>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -66,7 +70,7 @@
                 </tr>
               </thead>
               <tbody>
-              <div style="text-align:center">
+              <div style="text-align:right">
                   <a href="{% url 'DBHW:regionadd' %}">
                       <button class="btn btn-primary">增加</button></a>
               </div>
