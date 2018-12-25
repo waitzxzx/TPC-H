@@ -223,9 +223,10 @@ def Lineitem_Edit(request,nid,uid):
             quantity = request.POST.get('l_quantity')
             if quantity =="":
                 quantity = "0"
-            extendedprice = request.POST.get('l_extendedprice')
-            if extendedprice =="":
-                extendedprice = "0"
+
+            partkey = models.Part.objects.get(p_partkey=tem_partkey)
+            extendedprice = partkey.p_retailprice * float(quantity)
+
             discount = request.POST.get('l_discount')
             if discount =="":
                 discount = "0"
@@ -239,8 +240,6 @@ def Lineitem_Edit(request,nid,uid):
                 return render(request, "error.html", {"msg": "请输入正确的税"})
             if not p.match(discount):
                 return render(request, "error.html", {"msg": "请输入正确的折扣"})
-            if not p.match(extendedprice):
-                return render(request, "error.html", {"msg": "请输入正确的金额"})
             if not p.match(quantity):
                 return render(request, "error.html", {"msg": "请输入正确的数量"})
 
@@ -274,13 +273,18 @@ def Lineitem_Edit(request,nid,uid):
         return render(request,"error.html",{"msg":"您的输入有误，编辑失败！"})
 
 
+
+
 def Lineitem_delete(request, nid,uid):
-    obj1 = models.Orders.objects.get(o_orderkey=nid)
-    obj2 = models.Lineitem.objects.get(l_linenumber=uid,l_orderkey=nid)
-    sum = obj1.o_totalprice - obj2.l_extendedprice
-    models.Orders.objects.filter(o_orderkey=nid).update(o_totalprice=sum)
-    models.Lineitem.objects.filter(l_linenumber=uid).delete()
-    return render(request, 'lineitemdelete.html')
+    try:
+        obj1 = models.Orders.objects.get(o_orderkey=nid)
+        obj2 = models.Lineitem.objects.get(l_linenumber=uid,l_orderkey=nid)
+        sum = obj1.o_totalprice - obj2.l_extendedprice
+        models.Orders.objects.filter(o_orderkey=nid).update(o_totalprice=sum)
+        models.Lineitem.objects.filter(l_linenumber=uid).delete()
+        return render(request, 'lineitemdelete.html')
+    except:
+        return render(request, "error.html", {"msg": "删除失败！"})
 
 
 @csrf_exempt
@@ -298,15 +302,16 @@ def Lineitem_Add(request):
             partsupp = models.Partsupp.objects.filter(ps_partkey=tem_partkey,ps_suppkey=tem_suppkey)
             if partsupp.count()==0:
                 return render(request, "error.html", {"msg": "零件供应表中没有该组合"})
-            partkey = models.Part.objects.get(p_partkey=tem_partkey)
-            suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
+
             linenumber = request.POST.get('l_linenumber')
             quantity = request.POST.get('l_quantity')
             if quantity == '':
                 quantity = "0"
-            extendedprice = request.POST.get('l_extendedprice')
-            if extendedprice == '':
-                extendedprice = "0"
+
+            partkey = models.Part.objects.get(p_partkey=tem_partkey)
+            suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
+            extendedprice = partkey.p_retailprice * float(quantity)
+
             discount = request.POST.get('l_discount')
             if discount == '':
                 discount = "0"
@@ -320,8 +325,7 @@ def Lineitem_Add(request):
                 return render(request, "error.html", {"msg": "请输入正确的税"})
             if not p.match(discount):
                 return render(request, "error.html", {"msg": "请输入正确的折扣"})
-            if not p.match(extendedprice):
-                return render(request, "error.html", {"msg": "请输入正确的金额"})
+
             if not p.match(quantity):
                 return render(request, "error.html", {"msg": "请输入正确的数量"})
 
@@ -342,7 +346,6 @@ def Lineitem_Add(request):
                                                                 l_shipmode=shipmode,l_comment=comment)
             obj.save()
             models.Orders.objects.filter(o_orderkey=orderkey).update(o_totalprice=sum)
-
             return HttpResponseRedirect("/DBHW/lineitemlist/")
         else:
             order_list = models.Orders.objects.all().values_list("o_orderkey")
@@ -518,8 +521,10 @@ def Partsupp_list(request):
 def Partsupp_Edit(request,nid,uid):
     try:
         if request.method == "POST":
-            partkey = request.POST.get('ps_partkey')
-            suppkey = request.POST.get('ps_suppkey')
+            tem_partkey = request.POST.get('ps_partkey')
+            tem_suppkey = request.POST.get('ps_suppkey')
+            partkey = models.Part.objects.get(p_partkey=tem_partkey)
+            suppkey = models.Supplier.objects.get(s_suppkey=tem_suppkey)
             availqty = request.POST.get('ps_availqty')
             if availqty =="":
                 availqty = "0"
@@ -527,13 +532,14 @@ def Partsupp_Edit(request,nid,uid):
             p = re.compile(ava_regex)
             if not p.match(availqty):
                 return render(request, "error.html", {"msg": "请输入正确的数量"})
-
+            supplycost = tem_partkey.p_retailprice * float(availqty)
+            '''
             supplycost = request.POST.get('ps_supplycost')
             number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
             p = re.compile(number_regex)
             if not p.match(supplycost):
                 return render(request, "error.html", {"msg": "请输入正确的供应价格"})
-
+            '''
             comment = request.POST.get('ps_comment')
 
             models.Partsupp.objects.filter(ps_partkey=nid).update(ps_partkey=partkey, ps_suppkey =suppkey,ps_availqty=availqty,
@@ -571,15 +577,14 @@ def Partsupp_Add(request):
             p = re.compile(ava_regex)
             if not p.match(availqty):
                 return render(request, "error.html", {"msg": "请输入正确的数量"})
-
-            supplycost = request.POST.get('ps_supplycost')
+            supplycost = partkey.p_retailprice * float(availqty)
+            '''
             number_regex = r'^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$'
             p = re.compile(number_regex)
             if not p.match(supplycost):
                 return render(request, "error.html", {"msg": "请输入正确的供应价格"})
-
+            '''
             comment = request.POST.get('ps_comment')
-
             obj = models.Partsupp(ps_partkey=partkey, ps_suppkey =suppkey,ps_availqty=availqty,
                                                              ps_supplycost =supplycost,ps_comment=comment)
             obj.save()

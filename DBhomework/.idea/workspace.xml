@@ -2,8 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c0562f6-6d3d-4b77-a7f5-ddff38474bc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DBHW/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBHW/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customeradd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customeradd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customerdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customerdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customeredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customeredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customerlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customerlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customerview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customerview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lineitemadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lineitemadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lineitemdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lineitemdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lineitemedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lineitemedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lineitemlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lineitemlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lineitemview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lineitemview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nationadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nationadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nationdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nationdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nationedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nationedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nationlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nationlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nationview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nationview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partsuppadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partsuppadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partsuppdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partsuppdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partsuppedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partsuppedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partsupplist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partsupplist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partsuppview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partsuppview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regionadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regionadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regiondelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regiondelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regionedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regionedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regionlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regionlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regionview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regionview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supplieradd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supplieradd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supplierdelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supplierdelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supplieredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supplieredit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supplierlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supplierlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supplierview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supplierview.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,55 +60,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DBHW/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-669">
-              <caret line="342" column="22" selection-start-line="342" selection-start-column="22" selection-end-line="342" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBHW/urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/lineitemadd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/lineitemedit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3580">
-              <caret line="179" column="77" selection-start-line="179" selection-start-column="77" selection-end-line="179" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/error.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customeradd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2800">
-              <caret line="140" column="69" selection-start-line="140" selection-start-column="69" selection-end-line="140" selection-end-column="69" />
+            <state relative-caret-position="154">
+              <caret line="193" column="8" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -67,37 +91,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/lineitemlist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="111" column="50" selection-start-line="111" selection-start-column="50" selection-end-line="111" selection-end-column="50" />
+            <state relative-caret-position="-1509">
+              <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/nationlist.html">
+        <entry file="file://$PROJECT_DIR$/templates/nationadd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="117" column="6" selection-start-line="117" selection-start-column="6" selection-end-line="138" selection-end-column="11" />
+            <state relative-caret-position="409">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/lineitemedit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-614">
+              <caret line="194" column="33" lean-forward="true" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
+        <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.zh-CN.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2560">
-              <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
+            <state relative-caret-position="120">
+              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/partlist.html">
+        <entry file="file://$PROJECT_DIR$/static/js/jquery-3.3.1.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2780">
-              <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+            <state relative-caret-position="40">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="1514" column="18" lean-forward="true" selection-start-line="1514" selection-start-column="18" selection-end-line="1514" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -107,13 +168,37 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>debu</find>
+      <find>btn btn-success</find>
+      <find>btn btn-warning</find>
+      <find>Dashboard Template for Bootstrap</find>
+      <find>增加</find>
+      <find>物流系统：</find>
+      <find>static</find>
+      <find>class=&quot;page-header&quot;</find>
+      <find>&quot;table table-striped&quot;</find>
+      <find>class=class</find>
+      <find>text-primary</find>
+      <find>col-sm-3 col-md-2 sidebar</find>
+      <find>jq</find>
     </findStrings>
+    <replaceStrings>
+      <replace>btn btn-warning</replace>
+      <replace>btn btn-primary</replace>
+      <replace />
+      <replace>TPC-H 数据库课程设计</replace>
+      <replace>物流系统</replace>
+      <replace>class=&quot;page-header text-center&quot;</replace>
+      <replace>class</replace>
+      <replace>text-danger</replace>
+      <replace>col-sm-3 col-md-1 sidebar</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -121,30 +206,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/nation.html" />
-        <option value="$PROJECT_DIR$/DBhomework/urls.py" />
-        <option value="$PROJECT_DIR$/templates/nationdelete.py" />
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/DBhomework/settings.py" />
-        <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/templates/parteadd.html" />
         <option value="$PROJECT_DIR$/DBHW/models.py" />
+        <option value="$PROJECT_DIR$/DBHW/urls.py" />
+        <option value="$PROJECT_DIR$/templates/sidebar.html" />
+        <option value="$PROJECT_DIR$/DBHW/views.py" />
+        <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/templates/customeradd.html" />
         <option value="$PROJECT_DIR$/templates/customerdelete.html" />
         <option value="$PROJECT_DIR$/templates/customeredit.html" />
         <option value="$PROJECT_DIR$/templates/customerview.html" />
-        <option value="$PROJECT_DIR$/templates/lineitemadd.html" />
+        <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/templates/lineitemdelete.html" />
-        <option value="$PROJECT_DIR$/templates/lineitemedit.html" />
-        <option value="$PROJECT_DIR$/templates/lineitemview.html" />
         <option value="$PROJECT_DIR$/templates/nationadd.html" />
         <option value="$PROJECT_DIR$/templates/nationdelete.html" />
         <option value="$PROJECT_DIR$/templates/nationedit.html" />
         <option value="$PROJECT_DIR$/templates/nationview.html" />
         <option value="$PROJECT_DIR$/templates/orderadd.html" />
         <option value="$PROJECT_DIR$/templates/orderdelete.html" />
-        <option value="$PROJECT_DIR$/templates/orderview.html" />
         <option value="$PROJECT_DIR$/templates/partadd.html" />
         <option value="$PROJECT_DIR$/templates/partdelete.html" />
         <option value="$PROJECT_DIR$/templates/partedit.html" />
@@ -157,27 +236,33 @@
         <option value="$PROJECT_DIR$/templates/regiondelete.html" />
         <option value="$PROJECT_DIR$/templates/regionedit.html" />
         <option value="$PROJECT_DIR$/templates/regionview.html" />
-        <option value="$PROJECT_DIR$/templates/supplieradd.html" />
-        <option value="$PROJECT_DIR$/templates/supplierdelete.html" />
-        <option value="$PROJECT_DIR$/templates/supplieredit.html" />
         <option value="$PROJECT_DIR$/templates/supplierview.html" />
-        <option value="$PROJECT_DIR$/templates/customerlist.html" />
-        <option value="$PROJECT_DIR$/templates/lineitemlist.html" />
+        <option value="$PROJECT_DIR$/templates/supplieredit.html" />
+        <option value="$PROJECT_DIR$/templates/supplierdelete.html" />
+        <option value="$PROJECT_DIR$/templates/supplieradd.html" />
+        <option value="$PROJECT_DIR$/static/css/dashboard.css" />
         <option value="$PROJECT_DIR$/templates/nationlist.html" />
-        <option value="$PROJECT_DIR$/templates/orderlist.html" />
         <option value="$PROJECT_DIR$/templates/partlist.html" />
         <option value="$PROJECT_DIR$/templates/partsupplist.html" />
-        <option value="$PROJECT_DIR$/templates/regionlist.html" />
         <option value="$PROJECT_DIR$/templates/supplierlist.html" />
-        <option value="$PROJECT_DIR$/DBHW/urls.py" />
-        <option value="$PROJECT_DIR$/templates/error.html" />
-        <option value="$PROJECT_DIR$/DBHW/views.py" />
+        <option value="$PROJECT_DIR$/templates/regionlist.html" />
+        <option value="$PROJECT_DIR$/templates/orderview.html" />
+        <option value="$PROJECT_DIR$/templates/lineitemview.html" />
+        <option value="$PROJECT_DIR$/templates/customerlist.html" />
+        <option value="$PROJECT_DIR$/templates/orderlist.html" />
+        <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/static/js/jquery-3.3.1.js" />
+        <option value="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js" />
+        <option value="$PROJECT_DIR$/static/js/bootstrap-datetimepicker.zh-CN.js" />
+        <option value="$PROJECT_DIR$/templates/lineitemedit.html" />
+        <option value="$PROJECT_DIR$/templates/lineitemadd.html" />
+        <option value="$PROJECT_DIR$/templates/lineitemlist.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="282" />
-    <option name="y" value="31" />
+    <option name="x" value="197" />
+    <option name="y" value="70" />
     <option name="width" value="1044" />
     <option name="height" value="768" />
   </component>
@@ -200,16 +285,6 @@
             <path>
               <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-              <item name="DBHW" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -222,24 +297,6 @@
               <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBhomework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBhomework" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
-              <item name="tcl8.6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,7 +313,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\SCU\Courses 2018-2019-1\Course-Database System\TPC-H\TPC-H\DBhomework\static\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\SCU\Courses 2018-2019-1\Course-Database System\TPC-H\TPC-H\DBhomework\static\js" />
+      <recent name="F:\SCU\Courses 2018-2019-1\Course-Database System\TPC-H\TPC-H\DBhomework\static\css" />
       <recent name="F:\SCU\Courses 2018-2019-1\Course-Database System\TPC-H\TPC-H\DBhomework\templates" />
     </key>
   </component>
@@ -318,16 +380,22 @@
       <workItem from="1545575889897" duration="6929000" />
       <workItem from="1545626027443" duration="4870000" />
       <workItem from="1545631580918" duration="96000" />
+      <workItem from="1545636775113" duration="7388000" />
+      <workItem from="1545648884680" duration="3608000" />
+      <workItem from="1545652662555" duration="4466000" />
+      <workItem from="1545667600962" duration="1816000" />
+      <workItem from="1545702101871" duration="5983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77740000" />
+    <option name="totallyTimeSpent" value="101001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17397882" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22163388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -344,11 +412,12 @@
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.34096387" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32891566" />
       <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32891566" />
+      <window_info anchor="bottom" id="manage.py@DBhomework" order="14" weight="0.04918033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
@@ -379,348 +448,365 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DBhomework/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBhomework/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="84" column="29" lean-forward="true" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.html" />
-    <entry file="file://$PROJECT_DIR$/DBHW/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Python36/Lib/site-packages/django/db/backends/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/parteadd.html" />
-    <entry file="file://$USER_HOME$/Desktop/DBhomework/DBHW/views.py" />
-    <entry file="file://$PROJECT_DIR$/templates/customerdelete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customeredit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/customerview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="211">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/lineitemadd.html">
+    <entry file="file://$PROJECT_DIR$/templates/error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="171">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/lineitemdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/lineitemview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nationadd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/nationdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/nationedit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nationview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="191">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/orderadd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/orderdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/orderview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partadd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="122" column="2" selection-start-line="122" selection-start-column="2" selection-end-line="122" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partedit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partsuppadd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="211">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partsuppdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partsuppedit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partsuppview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="211">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="191">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/regionadd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/regiondelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/regionedit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="191">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/regionview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/supplieradd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/supplieredit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/supplierview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="191">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python36/Lib/site-packages/django/core/servers/basehttp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/supplieradd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/supplieredit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/supplierdelete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        <state relative-caret-position="1200">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customerlist.html">
+    <entry file="file://$PROJECT_DIR$/static/css/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="148" column="11" lean-forward="true" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="11" />
+        <state relative-caret-position="969">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBHW/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/partsuppadd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="100" column="42" selection-start-line="100" selection-start-column="42" selection-end-line="100" selection-end-column="42" />
+        <state relative-caret-position="1035">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partsupplist.html">
+    <entry file="file://$PROJECT_DIR$/templates/customeradd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+        <state relative-caret-position="200">
+          <caret line="112" column="68" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/regionlist.html">
+    <entry file="file://$PROJECT_DIR$/templates/partlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2660">
-          <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+        <state relative-caret-position="300">
+          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nationlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="67" column="19" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/supplierlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2500">
-          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+        <state relative-caret-position="189">
+          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBhomework/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/regionlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="520">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
-            <element signature="e#634#666#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1963" column="15" selection-start-line="1963" selection-start-column="15" selection-end-line="1963" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customerlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/partsupplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DBHW/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-669">
-          <caret line="342" column="22" selection-start-line="342" selection-start-column="22" selection-end-line="342" selection-end-column="22" />
+        <state relative-caret-position="8060">
+          <caret line="409" column="58" selection-start-line="409" selection-start-column="58" selection-end-line="409" selection-end-column="58" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBHW/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/nationview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+        <state relative-caret-position="1380">
+          <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/lineitemedit.html">
+    <entry file="file://$PROJECT_DIR$/templates/lineitemview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3580">
-          <caret line="179" column="77" selection-start-line="179" selection-start-column="77" selection-end-line="179" selection-end-column="77" />
+        <state relative-caret-position="1080">
+          <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/error.html">
+    <entry file="file://$PROJECT_DIR$/templates/orderview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        <state relative-caret-position="1200">
+          <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customeradd.html">
+    <entry file="file://$PROJECT_DIR$/static/js/jquery-3.3.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2800">
-          <caret line="140" column="69" selection-start-line="140" selection-start-column="69" selection-end-line="140" selection-end-column="69" />
+        <state relative-caret-position="185">
+          <caret line="10308" lean-forward="true" selection-start-line="10308" selection-end-line="10308" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap-datetimepicker.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery-3.3.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.uk.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap-datetimepicker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="1514" column="18" lean-forward="true" selection-start-line="1514" selection-start-column="18" selection-end-line="1514" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datetimepicker.zh-CN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/nationadd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/lineitemadd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="193" column="8" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/lineitemlist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="111" column="50" selection-start-line="111" selection-start-column="50" selection-end-line="111" selection-end-column="50" />
+        <state relative-caret-position="-1509">
+          <caret line="53" column="70" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/nationlist.html">
+    <entry file="file://$PROJECT_DIR$/templates/lineitemedit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="117" column="6" selection-start-line="117" selection-start-column="6" selection-end-line="138" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2560">
-          <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2780">
-          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+        <state relative-caret-position="-614">
+          <caret line="194" column="33" lean-forward="true" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="33" />
         </state>
       </provider>
     </entry>

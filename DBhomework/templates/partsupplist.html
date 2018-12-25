@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>TPC-H 数据库课程设计</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
@@ -33,41 +33,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">TPC-H</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../customerlist">顾客</a></li>
-            <li><a href="../partlist">零件</a></li>
-            <li><a href="../orderlist">订单</a></li>
-            <li><a href="../supplierlist">供应商</a></li>
-            <li><a href="../lineitemlist">订单明细</a></li>
-            <li><a href="../partsupplist">零件供应</a></li>
-             <li><a href="../nationlist">国家</a></li>
-            <li><a href="../regionlist">地区</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
+    {% include "header.html" %}
 
 
     <div class="container-fluid">
       <div class="row">
-         <div class="col-sm-3 col-md-2 sidebar">
+         <div class="col-sm-3 col-md-1 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">表单： <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="#">TPC-H 物流系统 <span class="sr-only">(current)</span></a></li>
             <li><a href="{% url 'DBHW:customerlist'  %}">顾客</a></li>
             <li><a href="{% url 'DBHW:partlist'  %}">零件</a></li>
             <li><a href="{% url 'DBHW:supplierlist'  %}">供应商</a></li>
@@ -80,12 +53,14 @@
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">零件供应</h1>
+          <h1 class="page-header text-center">零件供应</h1>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
-                                 <a href="{% url 'DBHW:partsuppadd' %}" id="{{ item.ps_partkey  }}">
-                  <button class="btn btn-success">增加</button></a>
+              <div style="text-align:center">
+                  <a href="{% url 'DBHW:partsuppadd' %}" id="{{ item.ps_partkey  }}">
+                  <button class="btn btn-primary">增加</button></a>
+              </div>
                 <tr>
                   <th>零件编号</th>
                   <th>供应商编号</th>
@@ -105,11 +80,11 @@
 
                     <td>
                   <a href="{% url 'DBHW:partsuppedit' item.ps_partkey.p_partkey item.ps_suppkey.s_suppkey  %}" id="{{ item.ps_partkey }}">
-                  <button class="btn btn-success">编辑</button></a>
+                  <button class="btn btn-primary">编辑</button></a>
                    <a href="{% url 'DBHW:partsuppdelete'  item.ps_partkey.p_partkey item.ps_suppkey.s_suppkey %}" id="{{ item.ps_partkey }}">
-                  <button class="btn btn-success">删除</button></a>
+                  <button class="btn btn-primary">删除</button></a>
                    <a href="{% url 'DBHW:partsuppview' item.ps_partkey.p_partkey item.ps_suppkey.s_suppkey%}" id="{{ item.ps_partkey }}">
-                  <button class="btn btn-success">浏览</button></a>
+                  <button class="btn btn-primary">浏览</button></a>
                   </td>
 
                 </tr>
@@ -130,7 +105,7 @@
         {% endif %}
         </li>
 
-        <span class="text-primary">
+        <span class="text-danger">
              第{{ partsupp_list.number }}页   共{{ partsupp_list.paginator.num_pages }}页
         </span>
 
@@ -146,15 +121,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
